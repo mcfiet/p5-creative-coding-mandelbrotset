@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p5.js example</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        background-color: #1b1b1b;
+        overflow: hidden;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(92, 92, 92);
+      }
+
+      .text {
+        position: absolute;
+        text-align: center;
+        left: 50%;
+        top: 1rem;
+        transform: translateX(-50%);
+        width: 80%;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem;
+      }
+
+      button {
+        padding: 1rem;
+        margin-left: 2rem;
+        outline: none;
+        border: none;
+        background-color: khaki;
+        color: black;
+        font-weight: bold;
+        border-radius: 0.25rem;
+      }
+    </style>
+    <script src="../p5.js"></script>
+    <script src="../p5.sound.js"></script>
+    <!-- <script src="../addons/p5.sound.js"></script> -->
+    <script type="module">
+      import * as sketch from "./sketch.js";
+      // Inject functions for p5.js to use
+      window.preload = sketch.preload;
+      window.setup = sketch.setup;
+      window.draw = sketch.draw;
+      window.mousePressed = sketch.mousePressed;
+      window.mouseDragged = sketch.mouseDragged;
+      window.mouseReleased = sketch.mouseReleased;
+      window.mouseWheel = sketch.mouseWheel;
+      window.windowResized = sketch.windowResized;
+      window.keyPressed = sketch.keyPressed;
+    </script>
+  </head>
+
+  <body>
+    <main>
+      <div class="text">
+        <p>
+          Wähle ein System zum Entdecken über die Radio-Buttons aus. Den Fokus
+          auf das System kannst du über den Button lösen und dich frei in der
+          Welt bewegen. Die Orbits bewegen ändern ihre Distanz nach der ihnen
+          zugewiesenen Frequenz.
+        </p>
+        <p>
+          Die Orbits bewegen ändern ihre Distanz und Farbe nach der ihnen
+          zugewiesenen Frequenz. Dabei hat jedes System eine eigene Musik.
+        </p>
+        <p>
+          Zu entdecken gibt es zwei verschiedene Attraktoren. Diese bestehen
+          jeweils aus drei Differentialgleichungen, die man für x, y und z
+          einsetzt.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
